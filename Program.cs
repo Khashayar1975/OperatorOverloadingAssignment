@@ -1,39 +1,36 @@
-﻿using System;
+using System;
 
-// Create the first Employee object
-Employee employee1 = new Employee();
+namespace EmployeeComparison
+{
+    internal class Program
+    {
+        // Main method is the entry point of the application.
+        static void Main(string[] args)
+        {
+            // Create the first Employee object.
+            Employee employee1 = new Employee();
+            employee1.Id = 1;
+            employee1.FirstName = "John";
+            employee1.LastName = "Smith";
 
-// Assign values to the first employee
-employee1.Id = 101;
-employee1.FirstName = "John";
-employee1.LastName = "Smith";
+            // Create the second Employee object.
+            Employee employee2 = new Employee();
+            employee2.Id = 1;
+            employee2.FirstName = "David";
+            employee2.LastName = "Brown";
 
-// Create the second Employee object
-Employee employee2 = new Employee();
+            // Compare employees using overloaded == operator.
+            bool areEqual = employee1 == employee2;
 
-// Assign values to the second employee
-employee2.Id = 101;
-employee2.FirstName = "David";
-employee2.LastName = "Johnson";
+            // Compare employees using overloaded != operator.
+            bool areNotEqual = employee1 != employee2;
 
-// Display information about the first employee
-Console.WriteLine("Employee 1:");
-Console.WriteLine($"ID: {employee1.Id}");
-Console.WriteLine($"Name: {employee1.FirstName} {employee1.LastName}");
+            // Display comparison results.
+            Console.WriteLine("Employees are equal: " + areEqual);
+            Console.WriteLine("Employees are not equal: " + areNotEqual);
 
-// Display information about the second employee
-Console.WriteLine("\nEmployee 2:");
-Console.WriteLine($"ID: {employee2.Id}");
-Console.WriteLine($"Name: {employee2.FirstName} {employee2.LastName}");
-
-// Compare employees using the overloaded == operator
-Console.WriteLine("\nAre employees equal?");
-Console.WriteLine(employee1 == employee2);
-
-// Compare employees using the overloaded != operator
-Console.WriteLine("\nAre employees different?");
-Console.WriteLine(employee1 != employee2);
-
-// Keep the console window open until a key is pressed
-Console.WriteLine("\nPress any key to exit...");
-Console.ReadKey();
+            // Keep the console window open.
+            Console.ReadLine();
+        }
+    }
+}
